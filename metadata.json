@@ -1,0 +1,5 @@
+{
+  "name": "See My Plan",
+  "description": "An AI-powered tool that transforms architectural plans into stunning, photorealistic visualizations. Users can upload a plan, select an interior design style, and specify materials, lighting, and environmental views to generate high-quality renderings.",
+  "requestFramePermissions": []
+}
