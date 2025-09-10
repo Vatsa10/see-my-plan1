@@ -24,13 +24,21 @@ export const visualizePlan = async (
   };
 
   const textPrompt = `
-    As an expert architectural visualizer, transform this architectural floor plan into a photorealistic 3D rendering from a top-down, bird's-eye perspective.
-    The final image must be a full top view of the interior, showing the complete layout with furnishings and decor.
-    Apply a '${style}' interior design aesthetic.
-    Emphasize the following materials: '${materials}'.
-    The lighting should be '${lighting}'.
-    The environment visible through any windows or openings should be a '${environment}'.
-    Focus on creating a cohesive, elegant, and high-quality interior scene based on the layout provided in the plan. Do not include any text, labels, or watermarks on the final image.
+    Your primary and most critical instruction is to create a photorealistic 3D rendering that is an exact, to-the-millimeter replica of the provided architectural floor plan. The structural integrity of the plan is non-negotiable.
+
+    **Mandatory Rules:**
+    1.  **Strict Adherence to Plan:** The layout, room dimensions, wall placements, and the exact positions of doors, windows, and any other structural features must be reproduced with absolute precision.
+    2.  **No Structural Alterations:** You MUST NOT add, remove, resize, or reposition any walls, doors, windows, or structural elements shown in the plan.
+    3.  **Style vs. Structure:** The selected architectural style ('${style}') must ONLY influence the choice of furniture, color schemes, materials, and decorative objects. It MUST NOT, under any circumstances, influence the building's structure, layout, or dimensions as defined by the provided plan. Your interpretation of the style must be confined entirely within the existing architectural boundaries.
+    4.  **Perspective:** The final image must be a top-down, bird's-eye view of the entire interior layout.
+
+    **Stylistic Direction (Secondary to Structural Accuracy):**
+    -   **Interior Design Style:** Apply a '${style}' aesthetic to the furnishings, color palette, and decor, strictly following Rule #3.
+    -   **Materials:** Feature these materials prominently: '${materials}'.
+    -   **Lighting:** The scene should be illuminated with '${lighting}'.
+    -   **Exterior View:** The environment visible through windows should be a '${environment}'.
+
+    The final output must be a clean image without any text, labels, or watermarks. Your success on this task is measured first and foremost by your accuracy in replicating the floor plan's structure.
   `;
 
   try {
